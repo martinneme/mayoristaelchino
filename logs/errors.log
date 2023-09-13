@@ -1,0 +1,14 @@
+{"level":"info","message":"ENVIROMENT: Production"}
+{"level":"info","message":"Persistence: MongoDB"}
+{"level":"info","message":"DB connected to MongoDB"}
+{"level":"info","message":"Express Server listening on PORT 8080"}
+{"level":"info","message":"GET en /login - 2023-09-13T22:50:46.919Z"}
+{"level":"info","message":"GET en /style.css - 2023-09-13T22:50:47.033Z"}
+{"level":"info","message":"GET en /js/login.js - 2023-09-13T22:50:47.046Z"}
+{"level":"info","message":"GET en / - 2023-09-13T22:50:53.757Z"}
+{"level":"info","message":"GET en /api/docs/ - 2023-09-13T22:50:57.638Z"}
+{"level":"info","message":"GET en /api/docs/swagger-ui.css - 2023-09-13T22:50:57.673Z"}
+{"level":"info","message":"GET en /api/docs/swagger-ui-bundle.js - 2023-09-13T22:50:57.683Z"}
+{"level":"info","message":"GET en /api/docs/swagger-ui-standalone-preset.js - 2023-09-13T22:50:57.692Z"}
+{"level":"info","message":"GET en /api/docs/swagger-ui-init.js - 2023-09-13T22:50:57.696Z"}
+{"level":"info","message":"GET en /api/docs/favicon-32x32.png - 2023-09-13T22:50:58.358Z"}
