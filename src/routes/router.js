@@ -63,7 +63,8 @@ export default class Router {
             if (policies[0] === 'PUBLIC') {
                 return next();
             }
-            passport.authenticate('jwt', { session: false })(req, res, (err) => {
+            passport.authenticate('jwt', { session: false,failureRedirect: '/login' })(req, res, (err) => {
+  
                 if (err) {
                     return next(err);
                 }
