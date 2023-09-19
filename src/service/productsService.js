@@ -24,9 +24,10 @@ const updateProductById = async(id,product) => {
 
 const deleteProductById = async (id,user) => {
     const prodDB = await productsRepository.findProductById(id)
-
+console.log(prodDB)
+console.log(user.role)
     if(user.role === 'PREMIUM'){
-        if(prodDB.owner = user.email){
+        if(prodDB.owner != user.email){
             throw new Error('El producto solo puede ser eliminado por el owner')
         }
         const dtoNotificationUser = new UserNotificationDTO('Product Delete',user,`Your product ${prodDB.title} was removed`)
