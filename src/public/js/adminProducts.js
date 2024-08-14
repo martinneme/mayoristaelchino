@@ -44,6 +44,7 @@ async function deleteProd (id){
 }
 
 
+
 const addProduct =document.getElementById('send');
 const panelAddProd = document.getElementById('panelAddProd');
 
@@ -57,8 +58,8 @@ addProduct.addEventListener('submit', async (e)=>{
     const category  = document.getElementById('category').value;
     const stock  = document.getElementById('stock').value;
     const price  = document.getElementById('price').value;
-    const status   = document.getElementById('status').value;
-
+    const status   = document.getElementById('status').checked;
+console.log(status);
     const productData = {
         title: title,
         description: description,
@@ -67,7 +68,7 @@ addProduct.addEventListener('submit', async (e)=>{
         category: category,
         stock: stock,
         price: price,
-        status: status,
+        status: status 
       };
   
     try {

@@ -43,7 +43,9 @@ const createNewPurchase = async (req,res)=>{
     try {
         const idCart = req.params.cid;
         const email = req.user.email;
-        const purchase = await createPurchase(idCart,email);
+        const market = req.user.market;
+        const marketAddress = req.user.marketAddress;
+        const purchase = await createPurchase(idCart,email,market,marketAddress);
         if (purchase) {
             res.json({
                 status: 'success',

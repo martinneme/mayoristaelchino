@@ -19,6 +19,14 @@ const ticketSchema = new mongoose.Schema({
     purchaser: {
       type: String,
       required: true
+    },
+    purchaserMarket: {
+      type: String,
+      required: true
+    },
+    purchaserMarketAddress: {
+      type: String,
+      required: true
     }
   });
 

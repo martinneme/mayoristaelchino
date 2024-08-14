@@ -119,7 +119,7 @@ a:hover{
     .chatGeneral h1 {
       margin: 0;
       padding: 10px;
-      background-color: #ab63d4;
+      background-color: #2fc2db;
  
       color:#ffffff;
       font-size: 24px;
@@ -188,7 +188,7 @@ a:hover{
     /* Estilos para el botón de envío del formulario */
     .btn-send {
       padding: 10px;
-      background-color: #ab63d4;
+      background-color: #2fc2db;
       color: white;
       border: none;
       border-radius: 5px;
@@ -244,13 +244,13 @@ a:hover{
     .butttonCart {
       border:none;
       border-radius: 6px;
-      background-color: #ab63d4;
+      background-color: #2fc2db;
       padding: 5px;
       color: #ffffff;
         }
     
         .butttonCart:hover{
-          background-color: #b67fd6;
+          background-color: #2fc2db;
         color: #000;
         }
     
@@ -391,13 +391,14 @@ a:hover{
   }
   
   .cardHead{
-    background-color: #ab63d4;
+    background-color: #2fc2db;
     height: 20px;
   }
 
   .cardfooter{
     background-color: gainsboro;
     height: 20px;
+    margin-top: auto;
   }
 
   .TitleProds{
@@ -415,7 +416,7 @@ margin: auto;
   .titleSection{
     text-align: center;
     padding-left: 1%;
-    color: #ab63d4;
+    color: #2fc2db;
     
 
   }
@@ -523,7 +524,9 @@ margin: auto;
     #last-name-label,
     #first-name-label
     #email-label,
-    #password-label {
+    #password-label,
+    #market-address-name-label,
+    #market-name-label {
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
@@ -534,7 +537,9 @@ margin: auto;
     #last-name,
     #first-name,
     #email,
-    #password {
+    #password,
+    #market-name,
+    #market-address-name {
       width: 90%;
       padding: 10px;
       margin: auto;
@@ -648,14 +653,14 @@ margin: auto;
     #logout,#logout a{
       margin-left: 1%;
       border: none;
-      background-color: #ab63d4;
+      background-color: #2fc2db;
       border-radius: 6px;
       color:#ffffff
     }
 
 
     #logout:hover{
-      background-color: #b67fd6;
+      background-color: #2fc2db;
       color: #000;
 
     }

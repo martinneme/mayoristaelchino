@@ -8,5 +8,6 @@ secretPassport:process.env.PASSPORT_SECRET,
 persistence:process.env.PERSISTENCE,
 userEmail:process.env.USEREMAIL,
 passwEmail:process.env.PASSWEMAIL,
-ENVIROMENT:process.env.ENVIROMENT
+ENVIROMENT:process.env.ENVIROMENT,
+adminEmail:process.env.ADMIN_EMAIL
 }

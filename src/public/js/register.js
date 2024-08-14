@@ -8,12 +8,16 @@ registerForm.addEventListener('submit',async (e)=>{
     const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const market = document.getElementById('market-name').value;
+    const marketAddress = document.getElementById('market-address-name').value;
 
     const user = {
         firstName,
         lastName,
         email,
-        password
+        password,
+        market,
+        marketAddress
     }
 
    const rs = await fetch('/api/register', {

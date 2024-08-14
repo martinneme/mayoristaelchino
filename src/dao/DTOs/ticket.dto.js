@@ -1,4 +1,4 @@
-
+import config from "../../config/config.js";
 
 export default class TicketDTO {
     constructor(purchase, productsAccepted, productsRejected) {
@@ -7,14 +7,16 @@ export default class TicketDTO {
       this.productsRejected = productsRejected;
     }
 
+  
+
     generateListProducts() {
-      let html = '<table><tr><th>Title  </th><th>  Price  </th><th>  Quantity  </th></tr>';
-    
+      let html = `<tr><td><b>${this.purchase.purchaser}  | </td><td>${this.purchase.purchaserMarket} | </td><td>${this.purchase.purchaserMarketAddress}</b></td></tr><br>`;
+      const currentDate = new Date().toLocaleDateString();
       this.productsAccepted.forEach((product) => {
-        html += `<tr><td>${product.title}</td><td>${product.price}</td><td>${product.quantity}</td></tr>`;
+        html += `<tr><td><b>Producto:</b> ${product.title}  |</td><td><b> Precio:</b> $${product.price}  |</td><td><b> Cantidad:</b> ${product.quantity}  |</td></tr><br>`;
       });
     
-      html += `<tr><td>Total:$${this.purchase.amount}</td></tr></table>`;
+      html += `<tr><td><b>Total:$${this.purchase.amount} | Fecha: ${currentDate} </b></td></tr></table>`;
       return html;
     }
 
@@ -27,5 +29,16 @@ export default class TicketDTO {
       }
 
       return ticketEmail;
+    }
+
+    getEmailAdmin(){
+      const ticketEmailAdmin= {
+        from: "Ecommerce - Pedido",
+        to: config.adminEmail, 
+        subject: "Ecommerce - Pedido", 
+        html:this.generateListProducts()
+      }
+
+      return ticketEmailAdmin;
     }
   }

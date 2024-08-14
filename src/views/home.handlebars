@@ -1,6 +1,6 @@
 <div>
     <div class="TitleProds">
-         <h2 class="titleSection">PRODUCTS</h2>   
+         <h2 class="titleSection">Distribuidora Mayorista El Chino</h2>   
 
     </div>
     <div name="cart" class="boxCart">
@@ -11,10 +11,13 @@
           <div id="user-profile" class="panelUser">
             <button id="logout"> <p id="usernameProfile">{{products.user.username}}</p>
   <p id="emailProfile">{{products.user.email}}</p>
+  <p id="emailProfile">{{products.user.market}}</p>
+       {{#if this.isAdmin}}
   <p id="adminProfile">{{products.user.role}}</p></button>
+  {{/if}}
  
-<button id="logout"  ><a href="/">Profile</a></button>
-<button id="logout" onclick="logout()" >Logout</button>
+<button id="logout"  ><a href="/">Perfil</a></button>
+<button id="logout" onclick="logout()" >Cerrar Sesión</button>
 </div>
     </div>
     <div class="box">
@@ -27,16 +30,16 @@
             <p class="description">{{this.description}}</p>
             <p class="price">${{this.price}}</p>
              {{#if this.stock}}
-            <p>Available</p>
+            <p>Disponible</p>
             <div id="cartButtons" >
 <button id="reduceQuantity" onclick="reduce(this)">-</button>
 <p id="quantityValue">1</p>
 <button id="incrementQuantity" onclick="increment(this)">+</button>
             </div>
-<div class="cartButtonBox"><button id="addToCart" onclick="addToCart(this)" >Add to cart</button></div>
+<div class="cartButtonBox"><button id="addToCart" onclick="addToCart(this)" >Agregar al carrito</button></div>
         {{else}}
                       <div>
-                       <button class="notAvailable" >Not available</button>
+                       <button class="notAvailable" >Sin Stock</button>
                       </div>
         {{/if}}
                     <div class="cardfooter"></div>
@@ -45,9 +48,9 @@
         {{/each}}
     </div>
       <nav name="paginado">
-        <div id="back" ><button onclick="navigateTo('{{products.pagination.prevPage}}')">Back</button></div>
+        <div id="back" ><button onclick="navigateTo('{{products.pagination.prevPage}}')">Atras</button></div>
         <div name="pageBox" class="pageBox"><p id="page">{{products.pagination.page}}</p></div>
-        <div id="next" ><button onclick="navigateTo('{{products.pagination.nextPage}}')">Next</button></div>
+        <div id="next" ><button onclick="navigateTo('{{products.pagination.nextPage}}')">Siguiente</button></div>
     </nav>
 </div>
 <div id="modal-flotante">

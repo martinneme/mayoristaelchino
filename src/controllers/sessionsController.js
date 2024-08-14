@@ -24,7 +24,9 @@ const registerUser = async (req, res) => {
             firstName,
             lastName,
             email,
-            password
+            password,
+            market,
+            marketAddress
         } = req.body;
 
         const exist = await findUserExist(email)
@@ -34,7 +36,9 @@ const registerUser = async (req, res) => {
                 firstName,
                 lastName,
                 email,
-                password
+                password,
+                market,
+                marketAddress
             };
     
             const userGenerated = await saveUser(user)

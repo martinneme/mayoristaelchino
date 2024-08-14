@@ -15,12 +15,11 @@ const createCart = async () => {
     return await cartsRepository.createCart();
 }
 
-const createPurchase = async (idCart,email)=> {
+const createPurchase = async (idCart,email,market,marketAddress)=> {
     const cart = await cartsRepository.findCartById(idCart);
     const buyed = [];
     const notStock = [];
     let totalAmount = 0;
-
     
     for (const prod of cart.products){
     const productDB = await productsRepository.findProductById(prod.product._id)
@@ -41,18 +40,21 @@ const createPurchase = async (idCart,email)=> {
    
 };
 
+    
 let codeUniqe = email;
 const currentDate = new Date().toLocaleDateString();
 const concatenatedString = codeUniqe.concat(currentDate);
 const code = await createPasswordHash(concatenatedString);
-const purchase = new PurchaseDTO(code, totalAmount, email);
+const purchase = new PurchaseDTO(code, totalAmount, email,market,marketAddress);
 
 const GeneratePuchase = await ticketRepository.saveTicket(purchase);
 
 const ticket = new TicketDTO(GeneratePuchase, buyed, notStock);
 
 const emailSend =  ticket.getEmail();
+const ticketEmailAdmin = ticket.getEmailAdmin();
 await sendEmail(emailSend);
+await sendEmail(ticketEmailAdmin);
 
 return  ticket
 }

@@ -47,7 +47,9 @@ const addNewProduct = async (req,res) => {
         if(req.user.role === 'PREMIUM'){
             product.owner=req.user.email
       }
+      console.log(product)
         const products = await addProduct(product);
+        console.log(products)
         if(products){
             res.sendSuccess("Producto Agregado!");
         }

@@ -1,20 +1,24 @@
 <div id="profile-container">
   <div id="profile-header" class="TitleProds">
     <h1 id="profile-title" class="titleSection">PROFILE</h1>
-    <p id="username">username: {{user.username}}</p>
+     <p id="username">Empresa: {{user.market}}</p>
+     <p id="username">Direccion Empresa: {{user.marketAddress}}</p>
+    <p id="username">Username: {{user.username}}</p>
     <p id="email">Email: {{user.email}}</p>
-    <p id="admin">Role: {{user.role}}</p>
+    <p id="admin">Rol: {{user.role}}</p>
   </div>
   <nav id="profile-navigation" name="paginado">
     <div id="back-button">
-      <button ><a href="/products">Products</a></button>
+      <button ><a href="/products">Productos</a></button>
     </div>
        <div id="back-button">
-      <button ><a href="/admin/console/users/">Admin users</a></button>
-      <button ><a href="/admin/console/products/">Admin products</a></button>
+        {{#if user.isAdmin}}
+      <button ><a href="/admin/console/users/">Administrar Usuarios</a></button>
+      <button ><a href="/admin/console/products/">Administrar Productos</a></button>
+         {{/if}}
     </div>
      <div id="back-button">
-    <button id="logout" onclick="logout()" >Logout</button>
+    <button id="logout" onclick="logout()" >Cerrar Sesión</button>
     </div>
   </nav>
 </div>

@@ -30,7 +30,19 @@ const usersSchema = new mongoose.Schema({
     lastConnection:{
         type:Date,
         default:Date.now
-    }
+    },
+    isAdmin:{
+        type:Boolean,
+        default:false
+    },
+    market:{
+        type:String,
+        required:true
+    },
+    marketAddress:{
+        type:String,
+        required:true
+    },
 
 
 });
