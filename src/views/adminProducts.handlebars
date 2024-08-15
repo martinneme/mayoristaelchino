@@ -15,6 +15,7 @@
       <tr>
         <th class="titleTable">PRODUCT</th>
         <th class="titleTable">STOCK</th>
+        <th class="titleTable">APLICAR</th>
         <th class="titleTable"> DELETE</th>
       </tr>
     </table>
@@ -25,8 +26,11 @@
           <div>
             {{this.title}}
           </div>
-          <div>
+          <div id="stock" contenteditable="true">
             {{this.stock}}
+          </div>
+           <div>
+          <button id="cambiarRol" onclick="changeStock(this)">Aplicar </button>
           </div>
           <div>
             <button class="deleteBtn" onclick="deleteProduct(this)">X</button>

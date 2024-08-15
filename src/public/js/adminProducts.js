@@ -44,6 +44,38 @@ async function deleteProd (id){
 }
 
 
+async function changeStock(element){
+    const user = element.closest(".productCart");
+    const idItem = user.querySelector("#idItem").textContent;
+    const valueStock = user.querySelector("#stock").textContent;
+if(idItem){
+   const isDelete = await updateStock(idItem,valueStock)
+   if(isDelete){
+    user.remove();
+   }
+}
+}
+
+async function updateStock(id,valueStock){
+
+    const productData = {
+        stock:valueStock
+    }
+
+    const rs = await fetch(`/products/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cookie': `${document.cookie['coderCookieToken']}`
+        },
+        body: JSON.stringify(productData)   
+    });
+    const response = await rs.json();
+
+    return response
+}
+
+
 
 const addProduct =document.getElementById('send');
 const panelAddProd = document.getElementById('panelAddProd');
@@ -59,7 +91,7 @@ addProduct.addEventListener('submit', async (e)=>{
     const stock  = document.getElementById('stock').value;
     const price  = document.getElementById('price').value;
     const status   = document.getElementById('status').checked;
-console.log(status);
+
     const productData = {
         title: title,
         description: description,
@@ -91,5 +123,8 @@ console.log(status);
       } catch (error) {
         console.error(`Error al realizar la solicitud:", ${error}`)
       }
+
+
+
       
 })

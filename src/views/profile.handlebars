@@ -12,14 +12,14 @@
       <button ><a href="/products">Productos</a></button>
     </div>
        <div id="back-button">
-        {{#if user.isAdmin}}
-      <button ><a href="/admin/console/users/">Administrar Usuarios</a></button>
-      <button ><a href="/admin/console/products/">Administrar Productos</a></button>
-         {{/if}}
+      <button id="admin-user-button"><a href="/admin/console/users/">Administrar Usuarios</a></button>
+      <button id="admin-prod-button"><a href="/admin/console/products/">Administrar Productos</a></button>
     </div>
      <div id="back-button">
     <button id="logout" onclick="logout()" >Cerrar Sesión</button>
     </div>
   </nav>
 </div>
-<script src="/js/profile.js"></script>
+<script src="/js/profile.js">
+
+</script>

@@ -5,19 +5,10 @@
    
     <div>
       <button class="deleteBtn" onclick="deleteCart()">Vaciar carrito</button>
-           <button onclick="buy()" class="buyButton">Comprar</button>
+           <button onclick="buy()" class="buyButton">Generar pedido</button>
     </div>
     <div class="cartView">
-       <table >
-  <tr>
-    <th  class="titleTable">Producto</th>
-    <th  class="titleTable">Titulo</th>
-    <th class="titleTable">Precio</th>
-    <th class="titleTable">Descripcion</th>
-    <th class="titleTable">Cantidad</th>
-    <th class="titleTable">Eliminar</th>
-  </tr>
-</table>
+
         <ul class="cards" id="cards">
         {{#each cart.products}}
     
@@ -25,19 +16,19 @@
                  <div>
            <img class="imageCart" src="{{this.product.thumbnails.[0]}}"></img>
            </div>
-            <div>
-            {{this.product.title}}
+            <div class="cardCartItem">
+            Titulo:{{this.product.title}}
            </div>
-            <div>
-            ${{this.product.price}}
+            <div class="cardCartItem"> 
+            Precio p/u: ${{this.product.price}}
            </div>
-            <div>
-            {{this.product.description}}
+            <div class="cardCartItem">
+            Descripcion: {{this.product.description}}
            </div>
-            <div class="titleTable">
-            {{this.quantity}}
+            <div class="titleTable cardCartItem">
+            Cantidad: {{this.quantity}}
            </div>
-            <div >
+            <div class="cardCartItem">
             <button class="deleteBtn" onclick="deleteItemCart(this)">X</button>
            <div hidden id="idItem">{{this.product._id}}</div>
            </div>
@@ -53,13 +44,13 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Ticket</h2>
-    <label for="code">Code:</label>
+    <label for="code">Codigo de compra:</label>
     <span id="code"></span>
     <br>
     <label for="email">Email:</label>
     <span id="emailuser"></span>
     <br>
-    <label for="products">Products:</label>
+    <label for="products">Productos:</label>
      <table id="productsAcepted">
   <tr>
     <th  class="titleTable">Titulo</th>
@@ -69,8 +60,7 @@
 </table>
 <hr>
  <div>
-  <label>Total:$</label>
-  <p id="totalAmount"></p>
+  <label>Total:$ <p id="totalAmount"></p></label>
  </div>
  <hr>
  <div>
