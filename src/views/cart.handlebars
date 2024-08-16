@@ -3,9 +3,10 @@
      <h1 class="titleSection">Carrito</h1>
   </div>
    
-    <div>
+    <div class="CartPanel">
       <button class="deleteBtn" onclick="deleteCart()">Vaciar carrito</button>
-           <button onclick="buy()" class="buyButton">Generar pedido</button>
+           <button onclick="buy()" class="buyButton">Generar pedido  <div class="spinner" id="spinner" ></div></button>
+          
     </div>
     <div class="cartView">
 
@@ -59,8 +60,8 @@
   </tr>
 </table>
 <hr>
- <div>
-  <label>Total:$ <p id="totalAmount"></p></label>
+ <div id="panelTotal">
+  <label>Total:  <p id="totalAmount"></p></label>
  </div>
  <hr>
  <div>

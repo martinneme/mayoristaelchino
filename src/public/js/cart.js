@@ -9,7 +9,7 @@ const codeLabel = document.getElementById("code");
 const emailLabel = document.getElementById("emailuser");
 const productsList = document.getElementById("products");
 const panelNotificacion = document.getElementById("panelNotificacion");
-
+const spinner = document.getElementById("spinner");
 
 function navigateTo() {
     window.location.href = '/products/';
@@ -73,6 +73,8 @@ const deleteCartDB = async (cid) => {
 
 
 const buy = async () => {
+
+    spinner.style.display="block";
     const rs = await fetch(`/carts/${isCartExist}/purchase`, {
         method: 'POST',
         headers: {
@@ -96,6 +98,7 @@ if(response.status === 'success'){
             productsTableAcepted.appendChild(row);
           });
     modal.style.display = "block";
+    spinner.style.display="none";
     }else{
         alert('The selected products are out of stock')
     }
